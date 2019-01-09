@@ -15,7 +15,7 @@ Lightweight and minimal bash script for launching notebooks from the command lin
 ## Installation
 Copy the following code into your `.alias` file and source it:
 
-```python
+```zsh
 function nbopen(){
     # For this function to work, in .jupyter/jupyter_notebook_config.py, set `c.NotebookApp.notebook_dir = '/'` so notebook always launches from root
     if [ $# -eq 0 ] ; then
