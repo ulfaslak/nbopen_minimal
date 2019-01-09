@@ -1,6 +1,6 @@
 # `nbopen` minimal
 
-Lightweight and minimal bash script for launching notebooks from the command line.
+Minimal viable solution for always launching notebooks on the same notebook server.
 
 #### Advantages:
 * Simple to use
@@ -11,6 +11,17 @@ Lightweight and minimal bash script for launching notebooks from the command lin
 * Server directory is hard coded (default is `/`, change at will)
 * Server port is hard coded (default is `8888`, change at will)
 * No guarantee that it works AS-IS on your machine. I wrote it up on a OSX. You may have to make a few changes to get it working on Linux, such as exchanging `open` with `xdg-open`.
+
+
+## Usage
+Create new notebook server if none exists:
+
+`$ nbopen`
+
+Open a notebook. If no notebook server exists, one is created:
+
+`$ nbopen path/to/my/notebook.ipynb`
+
 
 ## "Installation"
 Copy the following code into your `.alias` file and source it:
@@ -40,13 +51,4 @@ function nbopen(){
 
 If you don't maintain a `.alias` file, chances are have a `.profile` file which is sourced at boot. You can put the code there. Remember to source it (like `source .profile`).
 
-## Example use
-Create new notebook server if none exists:
-
-`$ nbopen`
-
-Open a notebook. If no notebook server exists, one is created:
-
-`$ nbopen path/to/my/notebook.ipynb`
-
-
+Also, if you already have [the original `nbopen` program](https://github.com/takluyver/nbopen) written by [takluyver](https://github.com/takluyver) installed, you should give the function a different name, like `nbopen_min` or something.
